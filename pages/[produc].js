@@ -44,8 +44,8 @@ export async function getServerSideProps(context) {
 
     const datat = await api.get(busca.replace(/ /g, '+'),{
         auth : {
-            username: '',
-            password: ''
+            username: 'promosim',
+            password: 'rvSxTWwtWRlokHD3mB01W1CPv'
         }
         });
 
