@@ -29,9 +29,7 @@ export default function Home() {
 
   function getProdutos (event){
     event.preventDefault();
-
-    console.log('asa')
-    router.push('/'+Procura);
+    router.push(Procura);
   }
 
   return (

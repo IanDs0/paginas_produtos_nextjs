@@ -27,51 +27,62 @@ export default function rotaProdutos() {
 
     async function getProdutos (){
 
-        const datat = await api.get(busca,{
+        const datat = await api.get(busca.replace(/ /g, '+'),{
         auth : {
             username: 'promosim',
             password: 'rvSxTWwtWRlokHD3mB01W1CPv'
         }
         });
 
-        setProdutos (datat.data.product.map(
+        let teste = []
+        teste = datat.data.product
+
+        teste.map(
             (p)=> {
-                let save = Produto(p)
-                save = save.filter((element) => element !== undefined)
-                // console.log(save)
+                let save = p
                 return save
             }
-        ))
-        console.log(produtos)
+        )
+        teste = Produto(teste)
+        setProdutos(teste)
     }
 
-    const Produto = (Produtos) => {
+    function Produto (Produtos) {
 
-        let save = Produtos.offer.map(
-        function (Produtos){
-            if(Produtos.storeName == "Magazine Luiza"){
-                let retorno ={
-                id: Produtos.id,
-                name: Produtos.name,
-                img: Produtos.imageURL,
-                saida: Produtos.url,
-                preco: Produtos.price,
+        let save = Produtos.map( function(p){
+
+            let salvar = p.offer.map(
+                function (Produtos){
+                    if(Produtos.storeName == "Magazine Luiza"){
+                        let retorno ={
+                        id: Produtos.id,
+                        name: Produtos.name,
+                        img: Produtos.imageURL,
+                        saida: Produtos.url,
+                        preco: Produtos.price,
+                        }
+                        return retorno;
+                    }
                 }
-                return retorno;
-            }
-        })
-
+            )
+            salvar = salvar.filter((element) => element !== undefined)
+            return salvar
+        }
+        )
+        save = save.flat(Infinity)
         save = save.filter((element) => element !== undefined)
         return save     
     }
 
     useEffect(() => {
         let parametros = router.query.produc
+
         if(parametros == undefined) {
-            let teste = router.pathname;
-            // console.log(teste)
+            setBusca('')
+            setProcura('')
+            setProdutos([])
+            router.push('/')
         }
-        parametros = parametros.replace(/ /g, '+')
         setBusca(parametros)
         setProdutos([])
         getProdutos(null)  
