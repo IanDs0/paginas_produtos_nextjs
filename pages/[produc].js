@@ -73,12 +73,62 @@ export async function getStaticPath(){
     const path = [
         {
             params:{
-                produc: 'iphone'
+                produc: 'Eletrodoméstico'
             }
         },
         {
             params:{
-                produc: 'samsung'
+                produc: 'Eletroportateis'
+            }
+        },
+        {
+            params:{
+                produc: 'Notebooks'
+            }
+        },
+        {
+            params:{
+                produc: 'Smart tvs'
+            }
+        },
+        {
+            params:{
+                produc: 'Smartphone'
+            }
+        },
+        {
+            params:{
+                produc: 'Geladeiras'
+            }
+        },
+        {
+            params:{
+                produc: 'Eletrodomésticos'
+            }
+        },
+        {
+            params:{
+                produc: 'Eletroportáteis'
+            }
+        },
+        {
+            params:{
+                produc: 'Smartphone'
+            }
+        },
+        {
+            params:{
+                produc: 'Magalu'
+            }
+        },
+        {
+            params:{
+                produc: 'Tvs'
+            }
+        },
+        {
+            params:{
+                produc: 'Notebook'
             }
         },
     ]
