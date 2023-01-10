@@ -9,7 +9,7 @@ import Link from 'next/link';
 import Products from '../components/produtos'
 import GTM from '../components/GTM'
 
-import api from './api';
+import api from '../src/api';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,7 +29,7 @@ export default function Home() {
 
   function getProdutos (event){
     event.preventDefault();
-    router.push(Procura);
+    router.push('/'+Procura);
   }
 
   return (

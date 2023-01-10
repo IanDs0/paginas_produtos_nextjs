@@ -7,46 +7,14 @@ import GTM from '../components/GTM'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 
-import api from './api';
+import api from '../src/api';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function rotaProdutos() {
+export async function getServerSideProps(context) {
 
-    const router = useRouter()
-
-    const [busca, setBusca] = useState('')
-    const [Procura, setProcura] = useState('')
-
-    const [produtos,setProdutos] = useState([])
-
-    const handleChange = event => {
-        setProcura(event.target.value)
-    };
+    let busca = context.query.produc
     
-
-    async function getProdutos (){
-
-        const datat = await api.get(busca.replace(/ /g, '+'),{
-        auth : {
-            username: 'promosim',
-            password: 'rvSxTWwtWRlokHD3mB01W1CPv'
-        }
-        });
-
-        let teste = []
-        teste = datat.data.product
-
-        teste.map(
-            (p)=> {
-                let save = p
-                return save
-            }
-        )
-        teste = Produto(teste)
-        setProdutos(teste)
-    }
-
     function Produto (Produtos) {
 
         let save = Produtos.map( function(p){
@@ -74,19 +42,77 @@ export default function rotaProdutos() {
         return save     
     }
 
-    useEffect(() => {
-        let parametros = router.query.produc
-
-        if(parametros == undefined) {
-            setBusca('')
-            setProcura('')
-            setProdutos([])
-            router.push('/')
+    const datat = await api.get(busca.replace(/ /g, '+'),{
+        auth : {
+            username: '',
+            password: ''
         }
-        setBusca(parametros)
-        setProdutos([])
-        getProdutos(null)  
+        });
+
+    let product = []
+    product = datat.data.product
+
+    product.map(
+        (p)=> {
+            let save = p
+            return save
+        }
+    )
+    product = Produto(product)
+    
+    return {
+        props: {
+            busca: busca,
+            product: product
+        }
+    }
+}
+
+export async function getStaticPath(){
+    
+    const path = [
+        {
+            params:{
+                produc: 'iphone'
+            }
+        },
+        {
+            params:{
+                produc: 'samsung'
+            }
+        },
+    ]
+
+    return {
+        paths: path,
+        fallback: 'blocking'
+    }
+}
+
+export default function rotaProdutos( props ) {
+
+    const router = useRouter()
+
+    const [busca, setBusca] = useState('')
+    const [Procura, setProcura] = useState('')
+
+    const [produtos,setProdutos] = useState([])
+
+    const handleChange = event => {
+        setProcura(event.target.value)
+    };
+    
+
+    useEffect(() => {
+        setBusca(props.busca)
+        setProcura('')
+        setProdutos(props.product)
     }, [])
+
+    function getProdutos (event){
+        setProdutos([])
+        router.push('/'+Procura);
+    }
 
     return (
         <>
