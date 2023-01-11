@@ -39,8 +39,6 @@ export default function Home() {
 
       <main className={styles.main}>
 
-      <div className="mar"></div>
-
       <header className="p-2 text-bg-dark">
           <div className="container d-flex justify-content-center">
               <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -51,27 +49,27 @@ export default function Home() {
 
       <div className="container">
 
-          <h2 className={inter.className}>Melhores {busca}</h2>
+          <h2 className="text-center mar">Melhores {busca}</h2>
 
 
           <div className="d-flex  w-100 ms-4 ">
 
+              <Link href={'/'+Procura}>
               <form onSubmit={getProdutos} className="wi-80 d-lg-block">
                   <div className="input-group ">
                   
                       <input type="text" aria-label="Last name" className="form-control w-45" placeholder="Mais Promoções" onChange={handleChange}/>
-                      <Link href={'/'+Procura}>
                         <button className="input-group-text bg-transparent" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-search">
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                             </svg>
                         </button>
-                      </Link>
 
                   </div>
 
               </form>
+              </Link>
               
           </div>
 

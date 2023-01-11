@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+// import styles from '../styles/Home.module.css'
 import { useState,useEffect } from "react"
 
 import Products from '../components/produtos'
@@ -21,7 +21,7 @@ export async function getServerSideProps(context) {
 
             let salvar = p.offer.map(
                 function (Produtos){
-                    if(Produtos.storeName == "Magazine Luiza"){
+                    // if(Produtos.storeName == "Magazine Luiza"){
                         let retorno ={
                         id: Produtos.id,
                         name: Produtos.name,
@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
                         preco: Produtos.price,
                         }
                         return retorno;
-                    }
+                    // }
                 }
             )
             salvar = salvar.filter((element) => element !== undefined)
@@ -118,11 +118,6 @@ export async function getStaticPath(){
         },
         {
             params:{
-                produc: 'Magalu'
-            }
-        },
-        {
-            params:{
                 produc: 'Tvs'
             }
         },
@@ -169,11 +164,9 @@ export default function rotaProdutos( props ) {
         
         <GTM Title={busca}/>
 
-        <main className={styles.main}>
+        <main>
 
-        <div className="mar"></div>
-
-        <header className="p-2 text-bg-dark">
+        <header className="p-2 text-bg-dark" >
             <div className="container d-flex justify-content-center">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <img src="https://promosim.com.br/assets/logo/logo-branco-2000px-sem-fundo.png" height="50"/>
@@ -183,7 +176,7 @@ export default function rotaProdutos( props ) {
 
         <div className="container">
 
-            <h2 className={inter.className}>Melhores {busca}</h2>
+            <h2 className="text-center mar">Melhores {busca}</h2>
 
 
             <div className="d-flex  w-100 ms-4 ">

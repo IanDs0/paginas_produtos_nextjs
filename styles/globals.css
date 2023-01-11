@@ -1,9 +1,15 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-    
-  background-color: #9400c6;
+.wi-80{
+  width: 60%; 
+  margin:0 auto;
+} 
+
+.autoo{
+  margin:0 auto;} 
+
+.img-fluid, .img-thumbnail{width: 11em !important;} 
+
+.mar{padding: 10px;}
+
+header.p-2.text-bg-dark{
+  background: #7A009D !important
 }
