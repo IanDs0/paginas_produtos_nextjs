@@ -182,6 +182,7 @@ export default function rotaProdutos( props ) {
         </div>
 
         <div className="mar"></div>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CVX4HP" height="0" width="0" ></iframe></noscript>
         </main>
         </>
     )
