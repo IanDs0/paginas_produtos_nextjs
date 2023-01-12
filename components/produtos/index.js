@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from './style.module.css';
 
 function Produtos({ produtos }) {
@@ -7,7 +9,7 @@ function Produtos({ produtos }) {
             {produtos?.map((product) =>(
                 
                 <div className="col" key={product.id}>
-                    <a href={product.saida}>
+                    <Link href={product.saida} target="_blank">
                         <div className="card card-product">
                             <div className="card-body">
 
@@ -16,15 +18,15 @@ function Produtos({ produtos }) {
                                         <span className="badge bg-danger">OFERTA RELAMPAGO</span>
                                     </div>
 
-                                    <a href={product.saida} target="_blank">
+                                    <div href={product.saida} >
                                         <img src={product.img} alt={product.name}/>
-                                    </a>
+                                    </div>
                                 </div>
 
                                 <h2 className="fs-6">
-                                    <a href={product.saida} target="_blank" className="text-inherit text-decoration-none">
+                                    <div href={product.saida}  className="text-inherit text-decoration-none">
                                         {product.name}
-                                    </a>
+                                    </div>
                                 </h2>
 
                                 <div>
@@ -33,17 +35,17 @@ function Produtos({ produtos }) {
 
                                 <div className="d-flex justify-content-between align-items-center mt-3">
                                     <div>
-                                        <span className="h4 text-dark">R$ {product.preco}</span>
+                                        <span className="h4 text-dark">{product.preco}</span>
                                     </div>
                                 </div>
 
                                 <div className="d-grid mt-2">
-                                    <a href={product.saida} target="_blank" className="btn btn-primary ">VER OFERTA</a>
+                                    <div href={product.saida}  className="btn btn-primary ">VER OFERTA</div>
                                 </div>
 
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
             )

@@ -1,13 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 import Products from '../components/produtos'
-import GTM from '../components/GTM'
+import GTM from '../components/headLocal'
 
 import api from '../src/api';
 
@@ -59,22 +56,21 @@ export default function Home() {
 
           <div className="d-flex  w-100 ms-4 ">
 
-              <Link href={'/'+Procura}>
-              <form onSubmit={getProdutos} className="wi-80 d-lg-block">
-                  <div className="input-group ">
-                  
-                      <input type="text" aria-label="Last name" className="form-control w-45" placeholder="Mais Promoções" onChange={handleChange}/>
-                        <button className="input-group-text bg-transparent" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-search">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </button>
+            <form onSubmit={getProdutos} className="wi-80 d-lg-block">
+              <div className="input-group ">
+              
+                <input type="text" aria-label="Last name" className="form-control w-45" placeholder="Mais Promoções" onChange={handleChange}/>
+                
+                <button className="input-group-text bg-transparent" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-search">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
 
-                  </div>
+              </div>
 
-              </form>
-              </Link>
+            </form>
               
           </div>
 
