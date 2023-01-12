@@ -4,11 +4,16 @@
 } 
 
 .autoo{
-  margin:0 auto;} 
+  margin:0 auto;
+} 
 
-.img-fluid, .img-thumbnail{width: 11em !important;} 
+.img-fluid, .img-thumbnail{
+  width: 11em !important;
+} 
 
-.mar{padding: 10px;}
+.mar{
+  padding: 10px;
+}
 
 header.p-2.text-bg-dark{
   background: #7A009D !important
