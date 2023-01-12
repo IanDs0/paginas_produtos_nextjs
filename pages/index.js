@@ -15,9 +15,18 @@ export default function Home() {
   const router = useRouter();
 
   const [busca,setBusca] = useState('Home')
-  const [Procura, setProcura] = useState('');
+  const [Procura, setProcura] = useState('')
 
   const [produtos,setProdutos] = useState([])
+
+  const path = [
+    'Notebook',
+    'Smart tv',
+    'Geladeira',
+    'Smartphone',
+    'Tv',
+    'Notebook'
+  ]
 
   const handleChange = event => {
     setProcura(event.target.value)
@@ -30,8 +39,9 @@ export default function Home() {
   }
   
   useEffect(() => {
-    
-    router.push('/iphone');
+    router.push(`/${path[
+      Math.floor(Math.random() * (path.length - 1))
+    ]}`);
 }, [])
 
   return (

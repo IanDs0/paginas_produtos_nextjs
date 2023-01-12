@@ -50,7 +50,7 @@ export async function getStaticProps(context) {
         }
     });
 
-    const product = await Produto(
+    let product = await Produto(
         datat.data.product.map(
             (p)=> {
                 let save = p
@@ -58,6 +58,12 @@ export async function getStaticProps(context) {
             }
         )
     )
+
+    const max = 16;
+
+    if (product.length > max) {
+        product = product.slice(0, max);
+    }
     
     return {
         props: {
