@@ -8,7 +8,7 @@ import TopBar from '../../components/topbar'
 import SEO from '../../components/headLocal'
 import styles from '../../styles/Product.module.css'
 
-import api from '../../src/api';
+import api from '../../api';
 
 const inter = Inter({ subsets: ['latin'] })
 

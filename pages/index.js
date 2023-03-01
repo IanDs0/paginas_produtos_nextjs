@@ -8,7 +8,7 @@ import Products from '../components/produtos'
 import TopBar from '../components/topbar'
 import SEO from '../components/headLocal'
 
-import api from '../src/api';
+import api from '../api';
 
 export default function Home() {
 

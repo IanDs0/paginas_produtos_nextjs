@@ -8,5 +8,4 @@ RUN npm install --production --silent
 COPY . .
 RUN yarn build
 EXPOSE 3000
-# USER node
 CMD ["yarn", "start"]
