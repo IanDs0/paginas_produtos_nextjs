@@ -25,7 +25,7 @@ function Produtos({ product }) {
                 <span className={styles.vezes}>ou {product.preco.vezes}</span>
             </div>
             
-            <Button onClick={redirect} children={product.name} href={product.link}/>
+            <Button onClick={redirect} children={product.name} href={product.link} variant="primaria"/>
         </div>
     )
 }
