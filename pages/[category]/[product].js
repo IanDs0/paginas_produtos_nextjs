@@ -1,7 +1,7 @@
 import { Inter } from '@next/font/google'
 import { useState,useEffect } from "react"
 
-import Products from '../../components/Produtos'
+import Products from '../../components/produtos'
 import SEO from '../../components/headLocal'
 import { useRouter } from 'next/router'
 import Link from 'next/link'

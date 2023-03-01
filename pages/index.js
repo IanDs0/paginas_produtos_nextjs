@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 
-import Products from '../components/Produtos'
+import Products from '../components/produtos'
 import SEO from '../components/headLocal'
 
 import api from '../src/api';
