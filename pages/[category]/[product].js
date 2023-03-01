@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Products from '../../components/produtos'
 import TopBar from '../../components/topbar'
 import SEO from '../../components/headLocal'
+import styles from '../../styles/Product.module.css'
 
 import api from '../../src/api';
 
