@@ -1,11 +1,10 @@
 import styles from './style.module.css';
 
-export default function Button({ onClick, href, children, variant }) {
+export default function Button({ onClick, children, variant }) {
     return (
         <button
             className={styles.ButtonClass} 
-            onClick={onClick} 
-            href={href}
+            onClick={onClick}
             variant={variant}
         >
             <h3>

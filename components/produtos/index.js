@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link';
 
 import Button from '.././Botao'
@@ -6,8 +7,11 @@ import styles from './style.module.css';
 
 function Produtos({ product }) {
 
+    const router = useRouter()
+
     function redirect() {      
-        window.location.href = product.link;
+        // router.push(`${product.link}`);
+        router.push(`${product.id}`);
     } 
 
     return (
@@ -25,7 +29,7 @@ function Produtos({ product }) {
                 <span className={styles.vezes}>ou {product.preco.vezes}</span>
             </div>
             
-            <Button onClick={redirect} children={product.name} href={product.id} variant="primaria"/>
+            <Button onClick={redirect} children={product.name} variant="primaria"/>
         </div>
     )
 }
