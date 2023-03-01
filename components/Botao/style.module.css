@@ -1,0 +1,7 @@
+.ButtonClass{
+    cursor:pointer;
+    width: 80%;
+    height: 40px;
+    background: #F4AB34;
+    border-radius: 5px;
+}
