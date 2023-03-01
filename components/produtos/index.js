@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Button from '../../components/botao'
+import Button from '../botao'
 
 import styles from './style.module.css';
 
