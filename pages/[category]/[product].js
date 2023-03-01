@@ -1,10 +1,11 @@
 import { Inter } from '@next/font/google'
 import { useState,useEffect } from "react"
-
-import Products from '../../components/produtos'
-import SEO from '../../components/headLocal'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+
+import Products from '../../components/produtos'
+import TopBar from '../../components/topbar'
+import SEO from '../../components/headLocal'
 
 import api from '../../src/api';
 
@@ -51,6 +52,8 @@ export default function rotaProdutos( props ) {
         <>
         
             <SEO Title={props.product}/>
+
+            <TopBar/>
 
             <h2>{props.product}</h2>
 

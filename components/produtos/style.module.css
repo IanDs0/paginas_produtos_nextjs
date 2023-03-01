@@ -1,0 +1,39 @@
+.produto{
+    max-width: 240px;
+    float: left;
+    padding: 10px;
+    border: 1px solid;
+    margin: 2px;
+}
+
+.produto img {
+    width: 100%;
+}
+
+.precos {
+    padding-bottom: 10px;
+}
+
+.precos span {
+    display: flex;
+}
+
+.atual {
+    font-size: 20px;
+}
+
+.antigo {
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.vezes {
+    color: #777;
+}
+
+.desconto {
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #F4AB34;
+    color: #111;
+}

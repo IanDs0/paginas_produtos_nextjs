@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link'
 
 import Products from '../components/produtos'
+import TopBar from '../components/topbar'
 import SEO from '../components/headLocal'
 
 import api from '../src/api';
@@ -25,6 +26,8 @@ export default function Home() {
     <>
       
       <SEO Title={busca}/>
+
+      <TopBar/>
 
       <h2>Melhores {busca}</h2>
 
